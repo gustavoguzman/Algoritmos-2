@@ -1,0 +1,98 @@
+#include "stdafx.h"
+#include <string>
+#include <iostream>
+const int n=10;
+const int m=10;
+using namespace std;
+
+class Matrices
+{
+
+private:
+
+	string matriz[n][m];
+	int tamano_fila;
+	int tamano_columna;
+public:
+	string Matriz(int f,int c);
+	void Matriz(int f,int c ,string valor);
+	int Tamano_fila();
+	int Tamano_columna();
+	void Tamano_fila(int f);
+	void Tamano_columna(int c);
+	Matrices contar_repetidos(string Mat[n][m], int tf, int tc);
+	void Guardar_matrices_a_objeto(string Mat[n][m],int tf,int tc);
+	void Devolver_matrices_a_objeto(string Mat[n][m],int &tf,int &tc);
+
+};
+
+//Metodos
+	
+	string Matrices::Matriz(int f,int c)
+	{
+		return matriz[f][c];
+	}
+	void Matrices::Matriz(int f,int c ,string valor)
+	{
+	matriz[f][c]=valor;
+	}
+	int Matrices::Tamano_fila()
+	{
+	return tamano_fila;
+	}
+	int Matrices::Tamano_columna()
+	{
+	return tamano_columna;
+	}
+	void Matrices::Tamano_fila(int f){
+	tamano_fila=f;
+	}
+	void Matrices::Tamano_columna(int c){
+	tamano_columna=c;
+	}
+
+void Matrices::Guardar_matrices_a_objeto(string Mat[n][m],int tf,int tc)
+{
+	int i,j;
+	i=0;
+	while(i<tf)
+	{
+	
+		j=0;
+		while(j<tc)
+		{
+			Matriz(i,j,Mat[i][j]);			
+			j++;
+		
+		
+		}
+		i++;
+	
+	}
+	Tamano_fila(tf);
+	Tamano_columna(tc);
+
+}
+	void Matrices::Devolver_matrices_a_objeto(string Mat[n][m],int &tf,int &tc)
+	{
+	int i,j;
+	i=0;
+	while(i<Tamano_fila())
+	{
+	
+		j=0;
+		while(j<Tamano_columna())
+		{
+			Mat[i][j]=Matriz(i,j);			
+			j++;
+		
+		
+		}
+		i++;
+	
+	}
+	tf=Tamano_fila();
+	tc=Tamano_columna();
+	
+	}
+	
