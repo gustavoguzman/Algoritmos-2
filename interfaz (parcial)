@@ -1,0 +1,60 @@
+#include "stdafx.h"
+#include <string>
+#include <iostream>
+
+const int M=10;
+const int N=10;
+using namespace std;
+class Interfaz{
+public:
+	void Leer(string Ma[N][M],int &fil,int &col);
+	void Escribir(string Ma[N][M],int fil,int col);
+	int Menu();
+
+
+};
+
+	void Interfaz::Leer(string Ma[N][M],int &fil,int &col)
+	{
+	int i,j;
+	cout<<"Tamaño de fila: ";
+	cin>>fil;
+	cout<<"Tamaño de la columna : ";
+	cin>>col;
+	i=0;
+	while(i<fil)
+	{
+	j=0;
+	while(j<col)
+	{
+		cout<<"Matriz["<<i<<"]["<<j<<"]= ";
+		cin.ignore();
+		getline(cin,Ma[i][j]);
+	j++;
+	
+	}
+	i++;
+	
+	}
+	
+	
+	}
+	void Interfaz::Escribir(string Ma[N][M],int fil,int col)
+	{
+		int i,j;
+
+		i=0;
+	while(i<fil)
+	{
+	j=0;
+	while(j<col)
+	{
+		cout<<"Matriz["<<i<<"]["<<j<<"]= "<<Ma[i][j]<<endl;
+		
+	j++;
+	
+	}
+	i++;
+	
+	}
+	}
